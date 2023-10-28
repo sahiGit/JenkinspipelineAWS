@@ -65,6 +65,8 @@ pipeline {
         stage('Deploy') {
 
             steps {
+                
+                dir('K8'){
 
                 echo 'Deploy stage started'
 
@@ -77,6 +79,7 @@ pipeline {
                 sh 'kubectl apply -f service.yaml'
 
                 echo 'Deploy stage completed'
+                }
 
             }
 
