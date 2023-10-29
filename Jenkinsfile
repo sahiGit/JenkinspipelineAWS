@@ -52,9 +52,9 @@ pipeline {
 
                 script {
                 // Define the Docker registry credentials
-               def dockerRegistryUrl = "your-docker-registry-url"
-               def dockerUsername = "your-docker-username"
-               def dockerPassword = "your-docker-password"
+               def dockerRegistryUrl = "https://hub.docker.com/repositories/kubesamm"
+               def dockerUsername = "kubesamm"
+               def dockerPassword = "sam@DockerHub"
 
                 // Execute the docker login command
                 sh "docker login -u ${dockerUsername} -p ${dockerPassword} ${dockerRegistryUrl}"
