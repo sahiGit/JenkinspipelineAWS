@@ -51,11 +51,11 @@ pipeline {
                 // Push the newly created Docker image to Dockerhub repository
 
                 script {
-                // Define the Docker registry credentials
-               def dockerRegistryUrl = "https://hub.docker.com/repositories/kubesamm"
-               def dockerUsername = "kubesamm"
-               def dockerPassword = "sam@DockerHub"
-
+                    // Define the Docker registry credentials
+                    def dockerRegistryUrl = "https://hub.docker.com/repositories/kubesamm"
+                    def dockerUsername = "kubesamm"
+                    def dockerPassword = "sam@DockerHub"
+                }
                 // Execute the docker login command
                 sh "docker login -u ${dockerUsername} -p ${dockerPassword} ${dockerRegistryUrl}"
                     
@@ -64,7 +64,6 @@ pipeline {
                 sh 'docker push kubesamm/myapp-image:ec2'
 
                 echo 'Push stage completed'
-                }
 
             }
 
