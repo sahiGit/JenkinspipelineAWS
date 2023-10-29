@@ -30,8 +30,8 @@ pipeline {
                     def dockerPassword = "sam@DockerHub"
                     // Execute the docker login command
                     sh "docker login -u ${dockerUsername} -p ${dockerPassword} ${dockerRegistryUrl}"
-                    sh 'docker tag myapp-image your_dockerhub_username/myapp-image:ec2'
-                    sh 'docker push your_dockerhub_username/myapp-image:ec2'
+                    sh 'docker tag myapp-image kubesamm/myapp-image:ec2'
+                    sh 'docker push kubesamm/myapp-image:ec2'
                     echo 'Push stage completed'
                 }
             }
